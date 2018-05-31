@@ -1,6 +1,6 @@
 .container {
     display: flex;
-	max-width: 985px;
+	max-width: 960px;
 	margin: 0 auto;
 }
 .flex-margin {
@@ -58,34 +58,38 @@
 }
 
 /*//////////INTRO//////////*/
-.intro {
+/* .intro {
     background: url('../img/intro/bg-intro.png') no-repeat center center;
     background-size: cover;
-}
+} */
 .intro-conteudo {
-    max-width: 400px;
+    width: 400px;
     display: flex;
-    padding: 100px 0 150px 0;
+    padding: 50px 0 0 0px;
+    position: absolute;
+    flex-direction: column;
+    z-index: 3;
 }
-.pontos {
-    padding: 25px 10px 0px 0px
+.bg-intro {
+    width: 100%;
+    display: block;
 }
-.intro-sobre h1 {
+.intro-conteudo h1 {
     color: #fff;
-    font-size: 2.68em;
+    font-size: 2.5em;
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
     
 }
-.intro-sobre p {
+.intro-conteudo p {
     color: #fff;
     font-family: 'Roboto', sans-serif;
-    font-size: 0.91em;
-    padding-bottom: 60px;
+    font-size: 0.82em;
+    padding-bottom: 25px;
     line-height: 1.4em;
 }
-.intro-sobre a {
+.intro-conteudo a {
     padding: 20px 40px;
     background: #ec1c24;
     text-align: center;
@@ -94,18 +98,20 @@
     font-family: 'Roboto', sans-serif;
     color: #fff;
     box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3);
+    align-self: flex-start;
 }
-.intro-sobre a:hover {
+.intro-conteudo a:hover {
     background: #000;
     transition: 0.5s;
 }
 
 .intro-2 {
     background: #fff;
-    top: -85px;
+    top: -70px;
     position: relative;
     box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.2);
     margin: 0 auto;
+    z-index: 2;
 }
 .intro-item {
     flex: 1;
@@ -116,21 +122,46 @@
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
     color: #ec1c24;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 .intro-item img {
-    margin: 30px;
+    margin: 20px;
+}
+
+@media only screen and (min-width: 740px) and (max-width: 959px) {  
+    .intro {
+        justify-content: center;
+    }
+    .intro-conteudo {
+        text-align: center;
+        width: 700px;
+    }
+    .intro-conteudo a {
+    align-self: center;
+}
+    .intro-2 {
+        top: -50px;
+    } 
 }
 
 @media only screen and (max-width: 739px) {
-    .intro-conteudo {
-        padding: 50px 0 60px 0;
+    .rslides {
+        display: none;
     }
-    .pontos {
-        padding: 10px 10px 0px 0px
-}
-    .intro-sobre h1 {
-        font-size: 2em;
+    .intro-conteudo {
+        text-align: center;
+        width: 300px;
+        padding: 10px;
+        position: static;
+        background: #361d1d;
+    }
+    
+    .intro-conteudo h1 {
+        font-size: 1.5em;
+        padding-bottom: 10px;
+    }
+    .intro-conteudo a {
+        align-self: center;
     }
     .intro-2 {
         top: 0px;
@@ -376,10 +407,51 @@
     }
 }
 
+/* Plugins slides */
+.rslides {
+    position: relative;
+    list-style: none;
+    overflow: hidden;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
 
+.rslides li {
+    -webkit-backface-visibility: hidden;
+    position: absolute;
+    display: none;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
 
+.rslides li:first-child {
+    position: relative;
+    display: block;
+    float: left;
+}
 
+.rslides img {
+    display: block;
+    height: auto;
+    float: left;
+    width: 100%;
+    border: 0;
+}
 
+/* ANIMAÇÃO */
+
+.anime {
+    opacity: 0;
+    transform: translate3d(-100px, 0px, 0px);
+}
+
+.anime-init {
+    opacity: 1;
+    transition: 1s;
+    transform: translate3d(0px, 0px, 0px);
+}
 
 
 
