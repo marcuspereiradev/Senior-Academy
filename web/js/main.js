@@ -6,7 +6,20 @@
 // 3 - Verificar essas duas variáveis sempre que o scroll for ativado
 // 4 - Se distância entre o elemento e o topo for maior que do scroll, adicionar classe
 // 5 - A classe deve mostrar e animar o elemento
-
+    
+var $search = doc.querySelector('[data-js="search"]');
+var $searchBarra = doc.querySelector('[data-js="search-barra"]');
+    $search.addEventListener('click', function() {
+    }, false)
+$($search).on('click', function() {
+    $searchBarra
+})    
+    
+    
+    
+    
+    
+    
 $(window).on('scroll', function(){
     var windowTop = $(this).scrollTop();
     $('.anime').each(function(){

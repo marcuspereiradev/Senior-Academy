@@ -22,8 +22,8 @@ img {
     align-self: center;
 }
 .menu-nav ul{
-    float: right;
     display: flex;
+    justify-content: flex-end;
 }
 .menu-nav ul li a {
     display: block;
@@ -37,6 +37,24 @@ img {
     transition: 0.5s;
     color: #fff;
 }
+.search {
+    align-self: center;
+    text-align: center;
+}
+.barra input {
+    width: 940px;
+    padding: 10px;
+    border: 1px solid #ec1c24;
+    background: #4d4d4d;
+    z-index: 4;
+    color: #ffffff;
+    position: absolute;
+}
+@media only screen and (min-width: 740px) and (max-width: 959px) {
+    .barra input {
+        width: 740px;
+    }
+}
 @media only screen and (max-width: 739px) {
     .logo {
         text-align: center;
@@ -48,8 +66,10 @@ img {
         font-family: 'Poppins', sans-serif;
         font-size: 0.807em;
     }
+    .barra input {
+        width: 300px;
+    }
 }
-
 
 .intro-conteudo {
     width: 400px;
@@ -447,8 +467,6 @@ img {
     transition: 1s;
     transform: translate3d(0px, 0px, 0px);
 }
-
-
 
 
 
